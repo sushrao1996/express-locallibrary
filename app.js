@@ -11,7 +11,7 @@ var usersRouter = require('./routes/users');
 var catalogRouter = require('./routes/catalog');
 
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb+srv://sush:PjYxZv1emD7aj40D@cluster0-iksb8.mongodb.net/test?retryWrites=true&w=majority';
+var mongoDB = process.env.MONGODB_URI
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
